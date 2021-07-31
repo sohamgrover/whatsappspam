@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R. Line</title>
+</head>
+<body>
+<h1> Radom line generator! </h1>
+<br>
+<br>
+<button id="btnOne" onclick="generate()"> Click to Generate </button><br><br>
+<input type="text" id="line">
+<button id="btnTwo" onclick="copy()">COPY</button>
+<style>
+body {
+color: white;
+font-size: 30px;
+padding: 0;
+background-color: black;
+text-align: center;
+}
+#btnTwo {
+height: 40px;
+width: 100px;
+background: pink;
+color: black;
+font-size: 20px;
+cursor: pointer;
+transition: 0.2s ease;
+border: 2px solid white;
+}
+#btnTwo:hover {
+background: purple;
+font-size: 22px;
+}
+#line {
+height: 30px;
+width: 500px;
+border: 2px solid pink;
+font-size: 20px;
+font-family: sans-serif;
+}
+#btnOne {
+height: 60px;
+width: 300px;
+background: purple;
+color: black;
+font-size: 30px;
+cursor: pointer;
+border: 2px solid white;
+transition: 0.2s ease;
+}
+#btnOne:hover {
+background: pink;
+font-size: 32px;
+}
+</style>
+<script>
+const arr = [
+  "Nice", 
+  "Wow", 
+  "Amazing", 
+  "Great", 
+  "Best", 
+  "Awesome", 
+  "Fantastic", 
+  "Brilliant", 
+  "Creative", 
+  "Beautiful", 
+  "Genuine", 
+  "Courageous", 
+  "Ambitious", 
+  "Excellent", 
+  "Wonderful", 
+  "Marvellous", 
+  "Magnificent", 
+  "Superb", 
+  "Glorious", 
+  "Sublime", 
+  "Lovely", 
+  "Delightful", 
+  "First-class", 
+  "Breath-taking", 
+  "Stunning", 
+  "Incredible", 
+  "Astounding", 
+  "Astonishing", 
+  "Awe-inspiring", 
+  "Stupendous", 
+  "Staggering", 
+  "Extra-ordinary", 
+  "Unbelieveable", 
+  "Impressive", 
+  "Bingo", 
+  "Spectacular",
+  "Precious",
+  "Splendid"
+];
+const arrTwo = ["lol", "(just kidding)", "(you are cringe)", "bruh", ""];
+const arrThree = ["boi", "Dude", "gal", "kira", "homie", ""];
+const arrFour = [".", "...", "!", " :)", " :0", " lol", "!!", "...!", " hmm", " :("];
+const arrFourOne = ["Hmm...", "By the way", "and", "So", "Therefore,", "cause", "Lastly,", "Also,", "Furthermore,", "In addition,", "From now on", "Line:", "", "Winner:", "yay!"];
+const arrFive = [
+  "This is an automated message", 
+  "Warning: do not remove me", 
+  "i will finish this group", 
+  "never gonna let you down",
+  "lol you will never find this message again",
+  "never gonna give you up"
+];
+const arrSix = [".", "...", "!", " :)", " :0", " lol", "!!", "...!", " bruh", " :("];
+
+var min = 0;
+var max = arr.length-1;
+var maxTwo = arrTwo.length-1;
+var maxThree = arrThree.length-1;
+var maxFour = arrFour.length-1;
+var maxFourOne = arrFourOne.length-1;
+var maxFive = arrFive.length-1;
+var maxSix = arrSix.length-1;
+
+function generate() {
+var random = Math.floor(Math.random() * (max-min+1)+min);
+var randomTwo = Math.floor(Math.random() * (maxTwo-min+1)+min);
+var randomThree = Math.floor(Math.random() * (maxThree-min+1)+min);
+var randomFour = Math.floor(Math.random() * (maxFour-min+1)+min);
+var randomFourOne = Math.floor(Math.random() * (maxFourOne-min+1)+min);
+var randomFive = Math.floor(Math.random() * (maxFive-min+1)+min);
+var randomSix = Math.floor(Math.random() * (maxSix-min+1)+min);
+var randomSentence = Math.floor(Math.random()*4)
+
+if (randomSentence==1) {
+var sentence = arr[random];
+}
+  else if (randomSentence==2) {
+  var sentence = arrFive[randomFive];
+  }
+  else if (randomSentence==3) {
+var sentence = arr[random]+" "+arrTwo[randomTwo]+", "+arrThree[randomThree]+arrFour[randomFour]+" "+arrFourOne[randomFourOne]+" "+arrFive[randomFive]+arrSix[randomSix];
+  }
+  else if (randomSentence==4) {
+var sentence = arr[random]+" "+arrTwo[randomTwo]+", "+arrThree[randomThree]+arrFour[randomFour]+" "+arrFourOne[randomFourOne]+" "+arrFive[randomFive]+arrSix[randomSix];
+  }
+  else if (randomSentence==0) {
+var sentence = arr[random]+" "+arrTwo[randomTwo]+", "+arrThree[randomThree]+arrFour[randomFour]+" "+arrFourOne[randomFourOne]+" "+arrFive[randomFive]+arrSix[randomSix];
+  }
+  else {
+    
+  }
+document.getElementById("line").value=sentence;
+}
+function copy() {
+var copyText = document.getElementById("line");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("line").value="COPIED!";
+}
+</script>
+</body>
+</html>
